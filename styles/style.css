@@ -192,10 +192,6 @@
   margin-block-start: 10px;
 }
 
-.section:has(.gallery) {
-  gap: 10px;
-}
-
 .gallery {
   display: grid;
   gap: 10px;
@@ -293,7 +289,6 @@
 
   .gallery {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, minmax(0, 1fr));
     gap: 20px;
     height: 780px;
   }
