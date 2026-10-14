@@ -2,7 +2,7 @@
 
 .page {
   color: var(--main-color);
-  font-family: "IBM Plex mono", monospace;
+  font-family: var(--main-font);
   font-size: 18px;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
@@ -33,7 +33,7 @@
 }
 
 .header__theme-menu-button {
-  width: 79px;
+  min-width: 79px;
   min-height: 26px;
   border: 1px solid transparent;
   color: var(--main-color);
@@ -85,25 +85,25 @@
   position: relative;
 }
 
-.decorated-zone::before,
-.decorated-zone::after {
+.decorated-zone::before {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
-}
-
-.decorated-zone::before {
   top: 10px;
   right: 10px;
+  width: 25px;
+  height: 25px;
 
   border-top: 1px solid var(--main-color);
   border-right: 1px solid var(--main-color);
 }
 
 .decorated-zone::after {
+  content: "";
+  position: absolute;
   bottom: 10px;
   left: 10px;
+  width: 25px;
+  height: 25px;
 
   border-bottom: 1px solid var(--main-color);
   border-left: 1px solid var(--main-color);
@@ -256,18 +256,15 @@
     padding: 60px 20px 0;
   }
 
-  .section_type_causes,
-  .section_type_advice {
+  .section.section_type_regular {
     grid-template-columns: 1fr 2fr;
   }
 
-  .section_type_causes > .section__title,
-  .section_type_advice > .section__title {
+  .section.section_type_regular > .section__title {
     grid-column: 1;
   }
 
-  .section_type_causes > .card,
-  .section_type_advice > .card {
+  .section.section_type_regular > .card {
     grid-column: 2;
   }
 
@@ -290,7 +287,6 @@
   .gallery {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    height: 780px;
   }
 
   .gallery__image {
@@ -356,10 +352,6 @@
   .section_type_factors > .card {
     grid-column: auto;
     grid-row: 2;
-  }
-
-  .gallery {
-    height: 1048px;
   }
 
   .footer {
